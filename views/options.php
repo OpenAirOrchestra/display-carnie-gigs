@@ -27,7 +27,7 @@ class displayCarnieGigsOptionsView {
 					             
         <tr valign="top">
         <th scope="row">Mirror Table</th>
-        <td><input type="text" name="carniegigs_mirror_table" value="<?php echo get_option('carniegigs_mirror_table'); ?>" /></td>
+        <td><input type="text" name="display_carniegigs_mirror_table" value="<?php echo get_option('display_carniegigs_mirror_table'); ?>" /></td>
         </tr>
         
     </table>

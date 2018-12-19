@@ -85,7 +85,7 @@ class displayCarnieGigsCalendar {
 	 * Register settings for this plugin
 	 */
 	function register_settings() {
-		register_setting( 'display-carnie-gigs-settings-group', 'carniegigs_mirror_table' );
+		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_table' );
 	}
 
 	function options_page() {
