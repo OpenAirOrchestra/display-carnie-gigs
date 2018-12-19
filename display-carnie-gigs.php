@@ -165,7 +165,7 @@ $DISPLAYCARNIEGIGSCAL = new displayCarnieGigsCalendar;
 register_activation_hook(__FILE__, array($DISPLAYCARNIEGIGSCAL, 'activate') );
 
 // shortcodes
-add_shortcode('carniegigs', array($DISPLAYCARNIEGIGSCAL, 'carniegigs_shortcode_handler'));
+add_shortcode('display-carniegigs', array($DISPLAYCARNIEGIGSCAL, 'carniegigs_shortcode_handler'));
 
 // actions
 add_action('admin_init', array($DISPLAYCARNIEGIGSCAL, 'enqueue_admin_scripts'));
