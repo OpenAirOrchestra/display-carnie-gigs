@@ -51,20 +51,18 @@ class displayCarnieGigsCalendar {
 		$version = get_option("display_carniegigs_db_version");
 
 		
+		/*
 		if ($version) {
-			/*
 			if ($version < CARNIE_GIGS_DB_VERSION) {
 				update_option("display_carniegigs_db_version", CARNIE_GIGS_DB_VERSION);
-			*/
 			}
 		} else {
 			// First install/activate
 
-			/*
 			// Add database version option
 			add_option("display_carniegigs_db_version", CARNIE_GIGS_DB_VERSION);
-			*/
 		}
+		*/
 
 	}
 
