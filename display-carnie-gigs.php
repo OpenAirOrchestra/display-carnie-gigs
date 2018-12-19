@@ -123,7 +123,7 @@ class displayCarnieGigsCalendar {
 			'display' => 'short'), $atts ) );
 
 ?>
-		DFDF Short Code
+		<p>DFDF Short Code</p>
 <?php
 		/*
 		if (! $this->carnie_mirror_database) {
