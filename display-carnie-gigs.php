@@ -95,7 +95,7 @@ class displayCarnieGigsCalendar {
 			wp_die( __('You do not have sufficient permissions to access this page.') );
 		} 
 
-		$carnie_gigs_options_view = new carnieGigsOptionsView;
+		$carnie_gigs_options_view = new displayCarnieGigsOptionsView;
 		$carnie_gigs_options_view->render();
 	}
 
@@ -117,12 +117,16 @@ class displayCarnieGigsCalendar {
 	 * [display-carniegigs] 
          * [display-carniegigs time="past"] 
          * [display-carniegigs time="future"] 
+         * [display-carniegigs display="short"] 
 	 */
 	function carniegigs_shortcode_handler($atts, $content=NULL, $code="") {
 		extract( shortcode_atts( array(
 			'time' => 'all',
 			'display' => 'short'), $atts ) );
 
+?>
+		DFDF Short Code
+<?php
 		/*
 		if (! $this->carnie_mirror_database) {
 			$this->carnie_mirror_database = new carnieMirrorDatabase;
