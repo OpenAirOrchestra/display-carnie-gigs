@@ -1,0 +1,46 @@
+/*
+ css for the 'short gig' listing style
+*/
+
+.gig .details {
+	color:#2DC5E9;
+	margin-left:30px;
+	margin-right:30px;
+}
+
+.year.collapsed .gig {
+	display:none;
+}
+
+div.year span.year {
+	font-weight:bold;
+    	font-size: 14px;
+}
+
+.gig.collapsed .details {
+	display:none;
+}
+
+.gig {
+	margin-left:25px;
+	margin-bottom:5px;
+}
+
+a.expand_button {
+	background-image: url("images/collapse_button.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	font-size:26px;
+	height:26px;
+	width:26px;
+	text-decoration:none;
+	vertical-align:middle;
+}
+
+.collapsed a.expand_button {
+	background-image: url("images/expand_button.png");
+}
+
+a.expand_button:hover {
+	background-position: -40px 0px;
+}
