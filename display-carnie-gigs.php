@@ -26,6 +26,7 @@ License: GPL2
 */
 
 $include_folder = dirname(__FILE__);
+require_once $include_folder . '/views/gig.php';
 require_once $include_folder . '/views/options.php';
 require_once $include_folder . '/model/mirror_database.php';
 
@@ -34,7 +35,8 @@ require_once $include_folder . '/model/mirror_database.php';
  */
 class displayCarnieGigsCalendar {
 
-	private $carnie_mirror_database;
+	private $carnie_mirror_database, 
+		$carnie_gig_view;
 
 	/*
 	 * Constructor
@@ -126,26 +128,27 @@ class displayCarnieGigsCalendar {
 			$this->carnie_mirror_database = new carnieMirrorDatabase;
 		}
 		   
-		$check_post_status = false;
 		$gigs = array();
 		if ($time == 'past') {
 			$gigs = $this->carnie_mirror_database->past_gigs();
 		} else if ($time == 'future') {
 			$gigs = $this->carnie_mirror_database->future_gigs();
-			$check_post_status = true;
 		} else {
 			$gigs = $this->carnie_mirror_database->all_gigs();
 		}
 
-		/*
 		if (! $this->carnie_gig_view) {
-			$this->carnie_gig_view = new carnieGigView;
+			$this->carnie_gig_view = new displayCarnieGigView;
 		}
 		
-		$this->carnie_gig_view->shortGigs($gigs, $check_post_status);
-		*/
-
 		$output = '<p>' . count($gigs) . ' gigs</p>';
+
+		if ($display == 'short') {
+			$output = $output . $this->carnie_gig_view->shortGigs($gigs);
+		} else {
+			$output = $output . $this->carnie_gig_view->longGigs($gigs);
+		}
+
 
 		return $output;
 	}
