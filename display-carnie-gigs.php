@@ -27,7 +27,7 @@ License: GPL2
 
 $include_folder = dirname(__FILE__);
 require_once $include_folder . '/views/options.php';
-
+require_once $include_folder . '/model/mirror_database.php';
 
 /*
  * Main class for dislay carnie gigs.  Handles activation, hooks, etc.
@@ -102,11 +102,7 @@ class displayCarnieGigsCalendar {
 	 * database is changed
 	 */
 	function mirror_database_changed() {
-		if (! $this->carnie_mirror_database) {
-			$this->carnie_mirror_database = new carnieMirrorDatabase;
-		}
-		$this->carnie_mirror_database->rebuild($this->metadata_fields, 
-			$this->metadata_prefix);
+		$this->carnie_mirror_database = new carnieMirrorDatabase;
 	}
 
 	/*
@@ -122,7 +118,6 @@ class displayCarnieGigsCalendar {
 			'time' => 'all',
 			'display' => 'short'), $atts ) );
 
-		/*
 		if (! $this->carnie_mirror_database) {
 			$this->carnie_mirror_database = new carnieMirrorDatabase;
 		}
@@ -138,6 +133,7 @@ class displayCarnieGigsCalendar {
 			$gigs = $this->carnie_mirror_database->all_gigs();
 		}
 
+		/*
 		if (! $this->carnie_gig_view) {
 			$this->carnie_gig_view = new carnieGigView;
 		}
