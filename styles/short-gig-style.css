@@ -27,7 +27,7 @@ div.year span.year {
 }
 
 a.expand_button {
-	background-image: url("images/collapse_button.png");
+	background-image: url("../images/collapse_button.png");
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 	font-size:26px;
@@ -38,7 +38,7 @@ a.expand_button {
 }
 
 .collapsed a.expand_button {
-	background-image: url("images/expand_button.png");
+	background-image: url("../images/expand_button.png");
 }
 
 a.expand_button:hover {
