@@ -111,7 +111,7 @@ class displayCarnieGigsCalendar {
 	 * database is changed
 	 */
 	function mirror_database_changed() {
-		$this->carnie_mirror_database = new carnieMirrorDatabase;
+		$this->carnie_mirror_database = new displayCarnieMirrorDatabase;
 	}
 
 	/*
@@ -133,7 +133,7 @@ class displayCarnieGigsCalendar {
 
 		// Get gigs from database
 		if (! $this->carnie_mirror_database) {
-			$this->carnie_mirror_database = new carnieMirrorDatabase;
+			$this->carnie_mirror_database = new displayCarnieMirrorDatabase;
 		}
 		   
 		$gigs = array();
