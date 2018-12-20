@@ -37,6 +37,14 @@ a.expand_button {
 	vertical-align:middle;
 }
 
+.year a.expand_button {
+	text-decoration:none;
+}
+
+.gig a.expand_button {
+	text-decoration:none;
+}
+
 .collapsed a.expand_button {
 	background-image: url("../images/expand_button.png");
 }

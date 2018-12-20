@@ -29,7 +29,7 @@ class displayCarnieGigView {
 				}
 				
 				$year = date('Y', strtotime($gig['date']));
-				$output .= "<a href='javascript:;' class='expand_button' onclick='toggle_parent_collapsed(event);'>&nbsp;&nbsp;&nbsp;&nbsp;</a> <span class='year'>$year</span><br/>";
+				$output .= "<a href='javascript:;' class='expand_button' onclick='toggle_parent_collapsed(event);'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <span class='year'>$year</span><br/>";
 			}
 
 
@@ -51,7 +51,7 @@ class displayCarnieGigView {
 	 * Render a single short gig 
 	 */
 	function shortGig($gig) {
-		$output .= "<a href='javascript:;' class='expand_button' onclick='toggle_parent_collapsed(event);'>&nbsp;&nbsp;&nbsp;&nbsp;</a> <span class='date'>"; 
+		$output .= "<a href='javascript:;' class='expand_button' onclick='toggle_parent_collapsed(event);'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <span class='date'>"; 
 
 		if (strtotime($gig['date']) > 0) {
 			$output .=  date('j M Y', strtotime($gig['date']));
