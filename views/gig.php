@@ -15,7 +15,9 @@ class displayCarnieGigView {
 		$output = '';
 
 		foreach ($gigs as $gig) {
-			$output .= $this->shortGig($gig);
+			if (! $gig['cancelled']) {
+				$output .= $this->shortGig($gig);
+			}
 		}
 
 		return $output;
@@ -71,7 +73,9 @@ class displayCarnieGigView {
 		$output = '';
 
 		foreach ($gigs as $gig) {
-			$output = $output . $this->longGig($gig) . '<br/>';
+			if (! $gig['cancelled']) {
+				$output = $output . $this->longGig($gig) . '<br/>';
+			}
 		}
 
 		return $output;
