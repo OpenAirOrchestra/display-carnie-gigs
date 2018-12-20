@@ -15,8 +15,7 @@ class displayCarnieGigView {
 		$output = '';
 
 		foreach ($gigs as $gig) {
-				$output = $output . $this->shortGig($gig) . '<br/>';
-			}
+			$output = $output . $this->shortGig($gig) . '<br/>';
 		}
 
 		return $output;
@@ -38,8 +37,7 @@ class displayCarnieGigView {
 		$output = '';
 
 		foreach ($gigs as $gig) {
-				$output = $output . $this->shortGig($gig) . '<br/>';
-			}
+			$output = $output . $this->longGig($gig) . '<br/>';
 		}
 
 		return $output;

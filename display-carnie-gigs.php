@@ -120,6 +120,8 @@ class displayCarnieGigsCalendar {
          * [display-carniegigs display="short"] 
 	 */
 	function carniegigs_shortcode_handler($atts, $content=NULL, $code="") {
+		$output = '';
+
 		extract( shortcode_atts( array(
 			'time' => 'all',
 			'display' => 'short'), $atts ) );
@@ -141,7 +143,6 @@ class displayCarnieGigsCalendar {
 			$this->carnie_gig_view = new displayCarnieGigView;
 		}
 		
-		$output = '<p>' . count($gigs) . ' gigs</p>';
 
 		if ($display == 'short') {
 			$output = $output . $this->carnie_gig_view->shortGigs($gigs);
