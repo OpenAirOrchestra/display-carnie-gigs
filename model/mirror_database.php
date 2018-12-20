@@ -10,6 +10,12 @@ class displayCarnieMirrorDatabase {
 	 * Constructor
 	 */
 	function __construct() {
+		$username = get_option('display_carniegigs_mirror_database_user_name');
+		$password = get_option('display_carniegigs_mirror_database_user_password');
+		$database = get_option('display_carniegigs_mirror_database');
+		$hostname = get_option('display_carniegigs_mirror_table');
+
+		$this->wpdb = new wpdb($username, $password, $database, $hostname);
 	}
 
 	/*
@@ -36,12 +42,11 @@ class displayCarnieMirrorDatabase {
 		// SELECT DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR));
 		//
 		if ($this->mirror_specified()) {
-			global $wpdb;
 			// convert GMT to PST
 			// SELECT DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR));
 			$select = "SELECT * FROM " . $this->table .
 			   ' WHERE `date` < DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) ORDER BY `date` DESC';
-			$results = $wpdb->get_results( $select, ARRAY_A );
+			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
 		*/
@@ -53,7 +58,6 @@ class displayCarnieMirrorDatabase {
 	 * Return future gigs in the mirror database
 	 */
 	function future_gigs () {
-		global $wpdb;
 		$results = array();
 
 		/*
@@ -65,7 +69,7 @@ class displayCarnieMirrorDatabase {
 			$select = "SELECT * FROM " . $this->table .
 				   ' WHERE `date` >= DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) ORDER BY `date`';
 
-			$results = $wpdb->get_results( $select, ARRAY_A );
+			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
 		*/
@@ -81,10 +85,9 @@ class displayCarnieMirrorDatabase {
 		/*
 
 		if ($this->mirror_specified()) {
-			global $wpdb;
 			$select = "SELECT * FROM " . $this->table .
 			   " ORDER BY `date` DESC";
-			$results = $wpdb->get_results( $select, ARRAY_A );
+			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
 		*/
@@ -101,10 +104,9 @@ class displayCarnieMirrorDatabase {
 		/*
 
 		if ($this->mirror_specified()) {
-			global $wpdb;
 			$select = "SELECT * FROM " . $this->table .
 			   " LIMIT 1";
-			$results = $wpdb->get_results( $select, ARRAY_A );
+			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
 		*/

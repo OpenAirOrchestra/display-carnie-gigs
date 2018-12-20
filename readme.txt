@@ -9,7 +9,7 @@ Display Gig Calendar on a second website for The Carnival Band.
 
 == Description ==
 
-Display Gigs from carnie-gigs website on a second, public webstie.
+Display Gigs from carnie-gigs plugin on a second, public webstie.
 
 == Installation ==
 

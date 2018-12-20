@@ -2,7 +2,7 @@
 /*
 Plugin Name: Display Carnie Gigs
 Plugin URI: https://github.com/OpenAirOrchestra/display-carnie-gigs
-Description: A gig calendar plugin for The Carnival Band 
+Description: Display Gigs from carnie-gigs plugin on a second, public webstie.
 Version: 0.1
 Author: Open Air Orchestra Webmonkey
 Author URI: mailto://oaowebmonkey@gmail.com
@@ -86,6 +86,10 @@ class displayCarnieGigsCalendar {
 	 */
 	function register_settings() {
 		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_table' );
+		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_database' );
+		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_database_user_name' );
+		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_database_user_password' );
+		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_database_hostname' );
 	}
 
 	function options_page() {

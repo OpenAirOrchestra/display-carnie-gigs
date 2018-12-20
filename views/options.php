@@ -41,7 +41,7 @@ class displayCarnieGigsOptionsView {
         </tr>
 
         <tr valign="top">
-        <th scope="row">Mirror Database User Password</th>
+        <th scope="row">Mirror Database Hostname</th>
         <td><input type="text" name="display_carniegigs_mirror_database_hostname" value="<?php echo get_option('display_carniegigs_mirror_database_hostname'); ?>" /></td>
         </tr>
 
