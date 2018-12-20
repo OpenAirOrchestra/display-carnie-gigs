@@ -118,14 +118,17 @@ class displayCarnieGigsCalendar {
          * [display-carniegigs time="past"] 
          * [display-carniegigs time="future"] 
          * [display-carniegigs display="short"] 
+         * [display-carniegigs display="long"] 
 	 */
 	function carniegigs_shortcode_handler($atts, $content=NULL, $code="") {
 		$output = '';
 
+		// Pull out shortcode
 		extract( shortcode_atts( array(
 			'time' => 'all',
 			'display' => 'short'), $atts ) );
 
+		// Get gigs from database
 		if (! $this->carnie_mirror_database) {
 			$this->carnie_mirror_database = new carnieMirrorDatabase;
 		}
@@ -139,11 +142,11 @@ class displayCarnieGigsCalendar {
 			$gigs = $this->carnie_mirror_database->all_gigs();
 		}
 
+		// Render results
 		if (! $this->carnie_gig_view) {
 			$this->carnie_gig_view = new displayCarnieGigView;
 		}
 		
-
 		if ($display == 'short') {
 			$output = $output . $this->carnie_gig_view->shortGigs($gigs);
 		} else {

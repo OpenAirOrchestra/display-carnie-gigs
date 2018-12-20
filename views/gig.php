@@ -97,9 +97,7 @@ class displayCarnieGigView {
 		$output = '';
 
 		foreach ($gigs as $gig) {
-			if (! $gig['cancelled']) {
-				$output = $output . $this->longGig($gig) . '<br/>';
-			}
+			$output .= $this->longGig($gig);
 		}
 
 		return $output;
@@ -109,7 +107,84 @@ class displayCarnieGigView {
 	 * Render a single long gig 
 	 */
 	function longGig($gig) {
-		return "Long Gig ";
+		$output = '<h3>';
+
+		if ($gig['cancelled'])
+		{
+			$output .= "Cancelled: ";
+			$output .= date('l, d M Y', strtotime($gig['date']));
+			$output .= ": ";
+
+			if ((strncasecmp($gig['url'], 'http://', 7) == 0) ||
+			    (strncasecmp($gig['url'], 'https://', 8) == 0))
+			{
+			    $output .= "<a href=\"{$gig['url']}\">";
+			}
+			else if (strlen($gig['url']) > 0)
+			{
+				$output .= "<a href=\"http://{$gig['url']}\">";
+			}
+			echo stripslashes($gig['title']);
+			if (strlen($gig['url']) > 0)
+			{
+				$output .= "</a>";
+			}
+			$output .= '<h3>';
+		}
+		else
+		{
+			if ($gig['tentative'])
+			{
+				$output .= "Tentative: ";
+			}
+			$output .= date('l, d M Y', strtotime($gig['date']));
+			$output .= ": ";
+
+			if ((strncasecmp($gig['url'], 'http://', 7) == 0) ||
+			    (strncasecmp($gig['url'], 'https://', 8) == 0))
+			{
+			    $output .= "<a href=\"{$gig['url']}\">";
+			}
+			else if (strlen($gig['url']) > 0)
+			{
+			    $output .= "<a href=\"http://{$gig['url']}\">";
+			}
+			$output .= stripslashes($gig['title']);
+			if (strlen($gig['url']) > 0)
+			{
+				$output .= "</a>";
+			}
+			$output .= "</h3>\n";
+
+			if (strlen($gig['location']) > 0)
+			{
+				$output .= "<p class='location'>";
+				$output .=  stripslashes($gig['location']); 
+				$output .= "</p>\n";
+			}
+			if (strlen($gig['description']) > 0)
+			{
+				$output .= "<p class='description'>";
+				$output .= stripslashes($gig['description']); 
+				$output .= "</p>\n";
+			}
+			$output .= "<p class='times'>";
+
+			if (strlen($gig['eventstart']) > 0)
+			{
+				$output .= "Event start: ";
+				$output .= date('g:ia', strtotime($gig['eventstart']));
+				$output .= ". ";
+			}
+			if (strlen($gig['performancestart']) > 0)
+			{
+				$output .= "Performance start: ";
+				$output .= date('g:ia', strtotime($gig['performancestart']));
+				$output .= ". ";
+			}
+			$output .= "</p>\n";
+		}
+		return $output;
 	}
 }
 ?>
