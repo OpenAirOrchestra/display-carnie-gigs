@@ -94,6 +94,9 @@ class displayCarnieGigsCalendar {
 		register_setting( 'display-carnie-gigs-settings-group', 'display_carniegigs_mirror_database_hostname' );
 	}
 
+	/*
+ 	 * render settings page
+ 	 */
 	function options_page() {
 		if (!current_user_can('manage_options'))  {
 			wp_die( __('You do not have sufficient permissions to access this page.') );
@@ -158,10 +161,17 @@ class displayCarnieGigsCalendar {
 	}
 
 	/*
-	 * Queue scripts for admin pages
+	 * Queue scripts and styles for admin pages
 	 */
 	function enqueue_admin_scripts() {
-		wp_enqueue_script('suggest');
+		// wp_enqueue_script('suggest');
+	}
+
+	/*
+	 * Queue scripts and styles for regular pages
+	 */
+	function enqueue_scripts() {
+	    wp_enqueue_style( 'short-gig-style', plugins_url( '/styles/short-gig-style.css', __FILE__ ) );
 	}
 
 }
@@ -179,6 +189,8 @@ add_shortcode('display-carniegigs', array($DISPLAYCARNIEGIGSCAL, 'carniegigs_sho
 add_action('admin_init', array($DISPLAYCARNIEGIGSCAL, 'enqueue_admin_scripts'));
 add_action('admin_menu', array($DISPLAYCARNIEGIGSCAL, 'create_admin_menu'));
 add_action('update_option_carniegigs_mirror_table', array($DISPLAYCARNIEGIGSCAL, 'mirror_database_changed'));
+add_action('wp_enqueue_scripts', array($DISPLAYCARNIEGIGSCAL, 'enqueue_scripts'));
+
 
 
 ?>
