@@ -172,6 +172,7 @@ class displayCarnieGigsCalendar {
 	 */
 	function enqueue_scripts() {
 	    wp_enqueue_style( 'short-gig-style', plugins_url( '/styles/short-gig-style.css', __FILE__ ) );
+	    wp_enqueue_style( 'short-gig-util', plugins_url( '/scripts/short-gig-util.js', __FILE__ ) );
 	}
 
 }
