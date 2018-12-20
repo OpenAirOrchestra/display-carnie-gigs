@@ -158,15 +158,15 @@ class displayCarnieGigView {
 
 			if (strlen($gig['location']) > 0)
 			{
-				$output .= "<p class='location'>";
+				$output .= "<div class='location'>";
 				$output .=  stripslashes($gig['location']); 
-				$output .= "</p>\n";
+				$output .= "</div>\n";
 			}
 			if (strlen($gig['description']) > 0)
 			{
-				$output .= "<p class='description'>";
+				$output .= "<div class='description'>";
 				$output .= stripslashes($gig['description']); 
-				$output .= "</p>\n";
+				$output .= "</div>\n";
 			}
 			$output .= "<p class='times'>";
 
