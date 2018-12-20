@@ -37,8 +37,6 @@ class displayCarnieMirrorDatabase {
 	function past_gigs () {
 		$results = array();
 
-		/*
-
 		// SELECT DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR));
 		//
 		if ($this->mirror_specified()) {
@@ -49,8 +47,6 @@ class displayCarnieMirrorDatabase {
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
-		*/
-
 		return $results;
 	}
 
@@ -59,8 +55,6 @@ class displayCarnieMirrorDatabase {
 	 */
 	function future_gigs () {
 		$results = array();
-
-		/*
 
 		// convert GMT to PST
 		// DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR))
@@ -72,7 +66,6 @@ class displayCarnieMirrorDatabase {
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
-		*/
 		return $results;
 	}
 
@@ -82,15 +75,11 @@ class displayCarnieMirrorDatabase {
 	function all_gigs () {
 		$results = array();
 
-		/*
-
 		if ($this->mirror_specified()) {
 			$select = "SELECT * FROM " . $this->table .
 			   " ORDER BY `date` DESC";
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
-
-		*/
 
 		return $results;
 	}
@@ -101,15 +90,12 @@ class displayCarnieMirrorDatabase {
 	function one_gig () {
 		$results = array();
 
-		/*
-
 		if ($this->mirror_specified()) {
 			$select = "SELECT * FROM " . $this->table .
 			   " LIMIT 1";
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
-		*/
 		return $results;
 	}
 }

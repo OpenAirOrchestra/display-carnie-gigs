@@ -145,7 +145,7 @@ class displayCarnieGigsCalendar {
 		$this->carnie_gig_view->shortGigs($gigs, $check_post_status);
 		*/
 
-		$output = '<p>DFDF Short Code</p>';
+		$output = '<p>' . count($gigs) . ' gigs</p>';
 
 		return $output;
 	}
