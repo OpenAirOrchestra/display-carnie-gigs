@@ -5,20 +5,44 @@
  */
 class displayCarnieGigView {
 
-
-
 	/*
 	 * Render short view of gigs from database results
 	 */
 	function shortGigs($gigs) {
 
 		$output = '';
+		$year = "";
+		$first = 1;
 
 		foreach ($gigs as $gig) {
-			if (! $gig['cancelled']) {
-				$output .= $this->shortGig($gig);
+
+			if (date('Y', strtotime($gig['date'])) != $year)
+			{
+				if ($first)
+				{
+					$output .= "<div class='year'>";
+				}
+				else
+				{
+					$output .= "</div>\n";
+					$output .= "\n<div class='year collapsed'>\n";
+				}
+				
+				$year = date('Y', strtotime($gig['date']));
+				$output .= "<a href='javascript:;' class='expand_button' onclick='toggle_parent_collapsed(event);'>&nbsp;&nbsp;&nbsp;&nbsp;</a> <span class='year'>$year</span><br/>";
 			}
+
+
+	                if ((! $gig['cancelled']) && (! $gig['tentative']))
+			{
+                        	$output .= "<div class='gig collapsed'>\n";
+				$output .= $this->shortGig($gig);
+	                        $output .= "\n</div>\n";
+			}
+
+			$first = 0;
 		}
+		$output .= "</div>\n";
 
 		return $output;
 	}
