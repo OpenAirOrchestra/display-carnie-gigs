@@ -1,13 +1,14 @@
 <?php
-/*
-Plugin Name: Display Carnie Gigs
-Plugin URI: https://github.com/OpenAirOrchestra/display-carnie-gigs
-Description: Display Gigs from carnie-gigs plugin on a second, public webstie.
-Version: 0.1
-Author: Open Air Orchestra Webmonkey
-Author URI: mailto://oaowebmonkey@gmail.com
-License: GPL2
-*/
+/**
+ * Plugin Name: Display Carnie Gigs
+ * Plugin URI: https://github.com/OpenAirOrchestra/display-carnie-gigs
+ *  Description: Display Gigs from carnie-gigs plugin on a second, public webstie.
+ * Version: 0.2
+ * Author: Open Air Orchestra Webmonkey
+ * Author URI: mailto://oaowebmonkey@gmail.com
+ * License: GPL2
+ * GitHub Plugin URI: https://github.com/OpenAirOrchestra/display-carnie-gigs
+ **/
 
 /*  Copyright 2018  Open Air Orchestra  (email : oaowebmonkey@gmail.com)
 
