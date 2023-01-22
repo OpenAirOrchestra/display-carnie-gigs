@@ -3,8 +3,8 @@ Contributors: Darryl F
 Donate link: http://www.thecarnivalband.com/
 Tags: gigs, calendar
 Requires at least: 5.3.1
-Tested up to: 5.3.1
-Stable tag: 0.2
+Tested up to: 6.1
+Stable tag: 1.0
 
 Display Gig Calendar on a second website for The Carnival Band.
 
@@ -40,3 +40,6 @@ The shortcode [display-carniegigs] is used to display gigs.  Here are some examp
 
 = 0.2 =
 * Github updater integration
+
+= 1.0 =
+* Bug fix
