@@ -4,7 +4,7 @@ Donate link: http://www.thecarnivalband.com/
 Tags: gigs, calendar
 Requires at least: 5.3.1
 Tested up to: 6.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Display Gig Calendar on a second website for The Carnival Band.
 
@@ -43,3 +43,6 @@ The shortcode [display-carniegigs] is used to display gigs.  Here are some examp
 
 = 1.0 =
 * Bug fix
+
+= 1.1 =
+Don't display time for 00:00:00
