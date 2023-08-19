@@ -170,13 +170,13 @@ class displayCarnieGigView {
 			}
 			$output .= "<p class='times'>";
 
-			if (strlen($gig['eventstart']) > 0)
+			if (strlen($gig['eventstart']) > 0 && $gig['eventstart'] != '00:00:00')
 			{
 				$output .= "Event start: ";
 				$output .= date('g:ia', strtotime($gig['eventstart']));
 				$output .= ". ";
 			}
-			if (strlen($gig['performancestart']) > 0)
+			if (strlen($gig['performancestart']) > 0 && $gig['performancestart'] != '00:00:00')
 			{
 				$output .= "Performance start: ";
 				$output .= date('g:ia', strtotime($gig['performancestart']));
