@@ -3,7 +3,7 @@
  * Plugin Name: Display Carnie Gigs
  * Plugin URI: https://github.com/OpenAirOrchestra/display-carnie-gigs
  *  Description: Display Gigs from carnie-gigs plugin on a second, public webstie.
- * Version: 1.1
+ * Version: 1.1.1
  * Author: Open Air Orchestra Webmonkey
  * Author URI: mailto://oaowebmonkey@gmail.com
  * License: GPL2
@@ -23,7 +23,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USAi
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 $include_folder = dirname(__FILE__);
