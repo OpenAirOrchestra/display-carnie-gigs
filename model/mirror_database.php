@@ -47,7 +47,7 @@ class displayCarnieMirrorDatabase {
 			// convert GMT to PST
 			// SELECT DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR));
 			$select = "SELECT * FROM " . $this->table .
-			   ' WHERE `date` < DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) ORDER BY `date` DESC';
+			   ' WHERE `date` < DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) AND `advertise` = 1 ORDER BY `date` DESC';
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
 
@@ -65,7 +65,7 @@ class displayCarnieMirrorDatabase {
 
 		if ($this->mirror_specified()) {
 			$select = "SELECT * FROM " . $this->table .
-				   ' WHERE `date` >= DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) ORDER BY `date`';
+				   ' WHERE `date` >= DATE(DATE_SUB(NOW(), INTERVAL 2 HOUR)) AND `advertise` = 1 ORDER BY `date`';
 
 			$results = $this->wpdb->get_results( $select, ARRAY_A );
 		}
